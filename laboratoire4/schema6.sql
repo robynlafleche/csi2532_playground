@@ -1,4 +1,4 @@
--- SCHEMA POUR LA QUESTION 1
+-- SCHEMA POUR LA QUESTION 6
 
 CREATE TABLE professor (
     ssn int,
