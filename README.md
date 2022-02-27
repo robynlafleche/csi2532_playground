@@ -1,7 +1,7 @@
 # csi2532_playground
 
 ## Lab5
-![Resultats](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire5/laboratoire5/Resultat.png "Resultat")
+![Resultats](laboratoire5/Resultat.png "Resultat")
 
 ## schema.sql
 ```sql
