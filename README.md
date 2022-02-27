@@ -1,22 +1,53 @@
 # csi2532_playground
 
-#Lab 03
-Voici les diagrammes ER pour chacune des questions du laboratoire
+## Lab5
+![Resultats](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire5/laboratoire5/Resultat.png "Resultat")
 
-## Question 1
-![Diagram 1](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire3/laboratoire3/Question1.png "Question 1")
+## schema.sql
+```sql
+CREATE TABLE courses(
+  course_name varchar(255),
+  semester varchar(255),
+  professor_name varchar(255)
+);
+```
 
-## Question 2
-![Diagram 2](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire3/laboratoire3/Question2.png "Question 2")
+## seed.sql
+```sql
+INSERT INTO courses(course_name, semester, professor_name)
+VALUES('CSI2532', 'W-2020', 'A'),
+('CSI2532', 'W-2020', 'A'),
+('CSI2532', 'W-2020', 'A'),
+('CSI2532', 'W-2020', 'A'),
+('CSI2532', 'W-2020', 'A'),
+('CSI2532', 'W-2020', 'A'),
+('CSI2532', 'W-2020', 'A');
+```
 
-## Question 3
-![Diagram 3](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire3/laboratoire3/Question3.png "Question 3")
+## 20220226210400-ajout-id.sql
+```sql
+ALTER TABLE courses
+ADD id serial;
+```
 
-## Question 4
-![Diagram 4](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire3/laboratoire3/Question4.png "Question 4")
+## 20220226212600-ajout-PK.sql
+```sql
+ALTER TABLE courses
+ADD PRIMARY KEY(id);
+```
 
-## Question 5
-![Diagram 5](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire3/laboratoire3/Question5.png "Question 5")
+## 20220226213000-table-migrations.sql
+```sql
+CREATE TABLE migrations(
+  nom_migration varchar(255),
+  temps_migration varchar(255)
+)
+```
 
-## Question 6
-![Diagram 6](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire3/laboratoire3/Question6.png "Question 6")
+## 20220226214000-split-semester.sql
+```sql
+SELECT course_name,
+split_part(semester, '-', 1) session,
+split_part(semester, '-', 2) annee,
+* FROM courses;
+```
