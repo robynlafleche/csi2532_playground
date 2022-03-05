@@ -187,3 +187,80 @@ split_part(semester, '-', 1) session,
 split_part(semester, '-', 2) annee,
 * FROM courses;
 ```
+## Lab6
+
+## Requetes
+### Question 1.
+```sql
+SELECT name, birthplace
+FROM artists;
+```
+![Question1](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire6/laboratoire6/images/Question1.PNG "Q1")
+
+### Question 2.
+```sql
+SELECT title, price
+FROM artworks
+WHERE year > 1600;
+```
+![Question2](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire6/laboratoire6/images/Question2.PNG "Q2")
+
+### Question 3.
+```sql
+SELECT title, type
+FROM artworks
+WHERE year = 2000 OR artist_name = 'Picasso';
+```
+![Question3](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire6/laboratoire6/images/Question3.PNG "Q3")
+
+### Question 4.
+```sql
+SELECT name, birthplace
+FROM artists
+WHERE EXTRACT(YEAR FROM dateofbirth) >= 1880 AND EXTRACT(YEAR FROM dateofbirth) <= 1930;
+```
+![Question4](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire6/laboratoire6/images/Question4.PNG "Q4")
+
+### Question 5.
+```sql
+SELECT name, birthplace
+FROM artists
+WHERE style IN ('Modern', 'Baroque', 'Renaissance');
+```
+![Question5](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire6/laboratoire6/images/Question5.PNG "Q5")
+
+### Question 6.
+```sql
+SELECT *
+FROM artworks
+ORDER BY title ASC;
+```
+![Question6](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire6/laboratoire6/images/Question6.PNG "Q6")
+
+### Question 7.
+```sql
+SELECT name, id
+FROM customers
+WHERE id IN (
+	SELECT customer_id
+	FROM likeartists
+	WHERE artist_name = 'Picasso'
+);
+```
+![Question7](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire6/laboratoire6/images/Question7.PNG "Q7")
+
+### Question 8.
+```sql
+SELECT name
+FROM customers
+WHERE id IN (
+	SELECT customer_id
+	FROM likeartists
+	WHERE artist_name IN (
+		SELECT artist_name
+		FROM artworks
+		WHERE type = 'Renaissance' AND price > 30000.00
+	)
+);
+```
+![Question8](https://github.com/robynlafleche/csi2532_playground/tree/laboratoire6/laboratoire6/images/Question8.PNG "Q7")
