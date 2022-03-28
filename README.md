@@ -266,7 +266,7 @@ WHERE id IN (
 ![Question8](https://github.com/robynlafleche/csi2532_playground/blob/laboratoire6/laboratoire6/images/Question8.png "Q7")
 
 ## Lab9
-Voici les diagrammes ER pour chacune des questions du laboratoire
+Voici les captures d'écrans pour chacune des exercices
 
 ## Exercise 1
 ![Exercise 1](https://github.com/robynlafleche/csi2532_playground/blob/laboratoire9/laboratoire9/images/Exercise1.png "Exercise 1")
